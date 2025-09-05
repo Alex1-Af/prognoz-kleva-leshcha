@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Прогноз Клева Леща и Погоды в Киеве</title>
+	<meta name="description" content="Прогноз Клева Леща в Киеве, а также прогноз погоды на 5 дней и архив прогнозв погоды." />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:title" content="Прогноз Клева Леща в Киеве" />
+	<meta property="og:description" content="Прогноз Клева Леща в Киеве, а также прогноз погоды на 5 дней и архив прогнозв погоды." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://Alex1-Af.github.io/prognoz-kleva-leshcha/" />
+
+	<!-- Обязательно абсолютный URL изображения -->
+	<meta property="og:image" content="https://Alex1-Af.github.io/prognoz-kleva-leshcha/img/prognoz-klava-lesha-v-kieve.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="880" />
+	<meta property="og:image:alt" content="Прогноз Клева Леща в Киеве" />
+	<meta property="og:site_name" content="Прогноз Клева Леща в Киеве" />
+	<meta property="og:locale" content="ru_RU" />
+
+	<link rel="stylesheet" href="css/style.min.css?_v=20250905092838">
+
+</head>
+
+<body>
+			<header>
+			<div class="header__container menu">
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item"><a href="#fishing-forecast"  data-goto=".fishing-forecast" class="menu__link menu__scroll">Прогноз Клева</a></li>
+						<li class="menu__item"><a href="#daily-forecast" data-goto=".daily-forecast" class="menu__link menu__scroll">Прогноз Погоды</a></li>
+						<li class="menu__item"><a href="#past-weather" data-goto=".past-weather" class="menu__link menu__scroll">Архив Погоды</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+	<div class="custom-loader" id="loading"></div>
+	<div class="container" data-spollers>
+		<header>
+			<div class="header__container menu">
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item"><a href="#fishing-forecast"  data-goto=".fishing-forecast" class="menu__link menu__scroll">Прогноз Клева</a></li>
+						<li class="menu__item"><a href="#daily-forecast" data-goto=".daily-forecast" class="menu__link menu__scroll">Прогноз Погоды</a></li>
+						<li class="menu__item"><a href="#past-weather" data-goto=".past-weather" class="menu__link menu__scroll">Архив Погоды</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="main-title">
+			<h1>Погода в Киеве</h1>
+			<p id="current-date" class="current-date"></p>
+		</div>
+		<div class="current-weather">
+			<div class="current-main">
+				<div class="weather-icon" id="current-icon"></div>
+				<div class="current-temp" id="current-temp"></div>
+				<div id="current-desc" style="font-size: 1.2rem;"></div>
+				<div class="moon-phase" id="moon-phase">
+					<div class="moon-icon" id="current-moon-icon"></div>
+					<div id="current-moon-phase"></div>
+				</div>
+			</div>
+
+			<div class="current-details">
+				<div class="detail-card">
+					<div class="detail-label">Ощущается</div>
+					<div class="detail-value" id="feels-like"></div>
+				</div>
+				<div class="detail-card">
+					<div class="detail-label">Влажность</div>
+					<div class="detail-value" id="humidity"></div>
+				</div>
+				<div class="detail-card">
+					<div class="detail-label">Ветер</div>
+					<div class="detail-value" id="wind"></div>
+				</div>
+				<div class="detail-card">
+					<div class="detail-label">Давление</div>
+					<div class="detail-value" id="pressure"></div>
+				</div>
+			</div>
+		</div>
+		<div class="hourly-forecast">
+			<h2 class="hourly-title">Почасовой прогноз</h2>
+			<div class="hourly-container" id="hourly-forecast"></div>
+		</div>
+		<div class="weather-chart"></div>
+		<!-- Прогноз клёва -->
+		<section class="fishing-forecast">
+			<article class="fishing-forecast-item js-current-fishing">
+				<h2 class="hourly-title">Прогноз клёва леща в Киеве</h2>
+
+				<div class="detail-card">
+					<h3 class="current-date current-date-fishing"></h3>
+					<div id="detail-today-main-fishing" class="detail-today-main-fishing">
+						<div class="detail-today-main-fishing__main"></div>
+						<div class="detail-today-main-fishing__moon"></div>
+						<div class="detail-today-main-fishing__season"></div>
+					</div>
+				</div>
+				<div class="daily-container">
+					<div class="detail-card">
+						<div class="detail-label">Утром</div>
+						<div class="detail-card__morning-fishing detail-card__top">
+							<div class="detail-card__img"></div>
+							<div class="detail-card__morning-descriptin detail-card__descriptin">
+							</div>
+						</div>
+						<button type="button" data-spoller class="detail-card__button">Подробнее</button>
+						<div class="detail-value" id="fishing-morning">
+							<div class="detail-morning-main-fishing"></div>
+							<div class="detail-morning-moon-fishing"></div>
+						</div>
+					</div>
+					<div class="detail-card">
+						<div class="detail-label">Днём</div>
+						<div class="detail-card__day-fishing detail-card__top">
+							<div class="detail-card__img"></div>
+							<div class="detail-card__day-descriptin detail-card__descriptin">
+							</div>
+						</div>
+						<button type="button" data-spoller class="detail-card__button">Подробнее</button>
+						<div class="detail-value" id="fishing-day">
+							<div class="detail-day-main-fishing"></div>
+							<div class="detail-day-moon-fishing"></div>
+						</div>
+					</div>
+					<div class="detail-card">
+						<div class="detail-label">Вечером</div>
+						<div class="detail-card__evening-fishing detail-card__top">
+							<div class="detail-card__img"></div>
+							<div class="detail-card__evening-descriptin detail-card__descriptin">
+							</div>
+						</div>
+						<button type="button" data-spoller class="detail-card__button">Подробнее</button>
+						<div class="detail-value" id="fishing-evening">
+							<div class="detail-evening-main-fishing"></div>
+							<div class="detail-evening-moon-fishing"></div>
+						</div>
+					</div>
+				</div>
+			</article>
+			<h3 class="daily-title">Прогноз клёва на 5 дней</h3>
+			<div class="daily-container-fishing" id="fishing-forecast-5days">
+				<article class="fishing-forecast-item js-fishing-forecast-item" style="display: none">
+					<div class="detail-card">
+						<h3 class="js-current-date-fishing current-date-fishing"></h3>
+						<div class="detail-today-main-fishing">
+							<div class="detail-today-main-fishing__main"></div>
+							<div class="detail-today-main-fishing__moon"></div>
+							<div class="detail-today-main-fishing__season"></div>
+						</div>
+					</div>
+					<div class="daily-container">
+						<div class="detail-card">
+							<div class="detail-label">Утром</div>
+							<div class="detail-card__morning-fishing detail-card__top">
+								<div class="detail-card__img"></div>
+								<div class="detail-card__morning-descriptin detail-card__descriptin">
+								</div>
+							</div>
+							<button type="button" data-spoller class="detail-card__button">Подробнее</button>
+							<div class="detail-value" id="fishing-morning">
+								<div class="detail-morning-main-fishing"></div>
+								<div class="detail-morning-moon-fishing"></div>
+							</div>
+						</div>
+						<div class="detail-card">
+							<div class="detail-label">Днём</div>
+							<div class="detail-card__day-fishing detail-card__top">
+								<div class="detail-card__img"></div>
+								<div class="detail-card__day-descriptin detail-card__descriptin">
+								</div>
+							</div>
+							<button type="button" data-spoller class="detail-card__button">Подробнее</button>
+							<div class="detail-value">
+								<div class="detail-day-main-fishing"></div>
+								<div class="detail-day-moon-fishing"></div>
+							</div>
+						</div>
+						<div class="detail-card">
+							<div class="detail-label">Вечером</div>
+							<div class="detail-card__evening-fishing detail-card__top">
+								<div class="detail-card__img"></div>
+								<div class="detail-card__evening-descriptin detail-card__descriptin">
+								</div>
+							</div>
+							<button type="button" data-spoller class="detail-card__button">Подробнее</button>
+							<div class="detail-value">
+								<div class="detail-evening-main-fishing"></div>
+								<div class="detail-evening-moon-fishing"></div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+		<section class="daily-forecast">
+			<h2 class="daily-title">Прогноз погоды на 5 дней</h2>
+			<div class="daily-container" id="daily-forecast"></div>
+		</section>
+		<!-- Вчерашняя погода -->
+		<section id="past-weather" class="past-weather">
+			<h2>📅 Погодный архив Киева (5 дней)</h2>
+			<div id="weather-container" class="weather-container">				
+			</div>
+
+		</section>
+		<!-- фото -->
+		<section class="photo">
+			<picture><source srcset="img/prognoz-klava-lesha-v-kieve.webp" type="image/webp"><img src="img/prognoz-klava-lesha-v-kieve.jpg" alt="Фото Валеры с подлящиком"></picture>
+		</section>
+		<div class="scroll-up" id="scrollUpBtn"></div>
+
+
+
+	</div>
+<script src="js/app.js?_v=20250905092838"></script>
+</body>
+	
+
+</html>
